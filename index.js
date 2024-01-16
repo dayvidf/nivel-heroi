@@ -1,32 +1,35 @@
-
 const nomeHeroi = "Shiro";
-const xpHeroi = 5500;
-var nivelHeroi = "Sem nivel";
+const xpHeroi = Math.random() * 11000;
+const nivelHeroi = classificadorNivel(xpHeroi);
 
-if (xpHeroi < 1000){
-    nivelHeroi = "Ferro";
+function classificadorNivel(xpHeroi) {
+    if (isNaN(xpHeroi)) {
+        return "Sem nível"
     }
-    else if(xpHeroi >= 1001 && xpHeroi <= 2000) {
-    nivelHeroi = "Bronze";    
+    if (xpHeroi <= 1000) {
+        return "Ferro";
+    }
+    else if (xpHeroi <= 2000) {
+        return "Bronze";
+    }
+    else if (xpHeroi <= 5000) {
+        return "Prata";
+    }
+    else if (xpHeroi <= 7000) {
+        return "Ouro";
+    }
+    else if (xpHeroi <= 8000) {
+        return "Platina";
+    }
+    else if (xpHeroi <= 9000) {
+        return "Ascendente";
+    }
+    else if (xpHeroi <= 10000) {
+        return "Imortal";
+    }
+    else if (xpHeroi >= 10001) {
+        return "Radiante";
+    }
 }
-    else if (xpHeroi >= 2001 && xpHeroi <= 5000){
-        nivelHeroi = "Prata";  
-    }
-    else if (xpHeroi >= 5001 && xpHeroi <= 7000){
-        nivelHeroi = "Ouro"; 
-    }
-    else if (xpHeroi >= 7001 && xpHeroi <= 8000){
-        nivelHeroi = "Platina";  
-    }
-    else if (xpHeroi >= 8001 && xpHeroi <= 9000){
-        nivelHeroi = "Ascendente";  
-    }
-    else if (xpHeroi >= 9001 && xpHeroi <= 10000){
-        nivelHeroi = "Imortal";  
-    }
-    else if (xpHeroi >= 10001){
-        nivelHeroi = "Radiante";  
-    }
 
-    console.log("O Herói de nome " + nomeHeroi + " está no nível " + nivelHeroi + "!");
-    
+console.log("O Herói de nome " + nomeHeroi + " está no nível " + nivelHeroi + "!");
